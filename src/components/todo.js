@@ -1,9 +1,10 @@
 /* eslint-disable no-plusplus */
-import React from "react";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import Footer from "./footer";
-import NewTaskForm from "./new-task-form";
-import TaskList from "./task-list";
+import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import Footer from './footer';
+import NewTaskForm from './new-task-form';
+import TaskList from './task-list';
 
 export default class ToDo extends React.Component {
   maxId = 100;
@@ -12,7 +13,7 @@ export default class ToDo extends React.Component {
     super();
     this.state = {
       todoData: [],
-      filterSelected: "all",
+      filterSelected: 'all',
     };
   }
 
@@ -101,8 +102,8 @@ export default class ToDo extends React.Component {
     const doneCount = todoData.filter((el) => !el.done).length;
     let filteredArr = [];
     if (
-      typeof filterSelected === "string" &&
-      filterSelected.toLowerCase() === "all"
+      typeof filterSelected === 'string'
+      && filterSelected.toLowerCase() === 'all'
     ) {
       filteredArr = todoData;
     } else if (filterSelected) {
